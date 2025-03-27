@@ -39,18 +39,6 @@ if (NOT PYTHON_EXEC)
     set(PYTHON_EXEC $ENV{PYTHON_EXEC})
 endif (NOT PYTHON_EXEC)
 
-if (NOT PYTHON_EXEC)
-    find_program(PYTHON_EXEC
-        NAMES "python${Python_FIND_VERSION}" "python3"
-        PATHS
-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\3.6\\InstallPath]
-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\3.5\\InstallPath]
-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\3.4\\InstallPath]
-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\3.3\\InstallPath]
-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.7\\InstallPath]
-        DOC "Location of python executable to use")
-endif(NOT PYTHON_EXEC)
-
 # On macOS the python executable might be symlinked to the "real" location
 # of the python executable. The header files and libraries are found relative
 # to that path.
