@@ -14,6 +14,6 @@ vcpkg install `
 
 # Ensure pip build env can see Ninja/CMake
 python -m pip install --upgrade pip
-python -m pip install cmake ninja
+python -m pip install cmake ninja numpy
 
 Write-Host "Dependencies installed successfully."
