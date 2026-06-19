@@ -8,8 +8,7 @@ arch="$(uname -m)"
 if [ "${build_os}" == "Linux" ]; then
     # Install base dependencies
     yum -y install \
-        sudo \
-        python3-numpy
+        sudo
 
     if [ "${arch}" == "aarch64" ]; then
         yum install -y wget
@@ -32,6 +31,5 @@ elif [ "${build_os}" == "Darwin" ]; then
     brew install \
         eigen \
         llvm@18 \
-        yaml-cpp \
-        numpy
+        yaml-cpp
 fi
